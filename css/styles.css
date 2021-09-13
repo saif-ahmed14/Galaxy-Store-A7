@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
+  background-color: rgb(233, 241, 245) !important;
 }
 .search-field {
   border: none;
@@ -40,13 +41,14 @@ body {
   transition: 0.6s;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  box-shadow: 4px 4px 10px gray;
   border-radius: 10px;
   border: 1px solid cyan;
+  background-color: #f7eeee;
 }
 .product-image {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
 }
 .cart {
   width: 350px;
@@ -83,4 +85,27 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/* own added */
+#total-Products{
+  margin-left: 14px;
+}
+
+.product{
+  background-color: white;
+  margin: 10px 5px 15px 15px;
+}
+
+.title-height{
+  height: 85px;
+}
+
+.fa-star{
+  color: goldenrod;
+}
+
+.btn-bg-color{
+  background-color: rgb(111, 171, 245) !important;
+  font-weight: 700 !important;
 }
