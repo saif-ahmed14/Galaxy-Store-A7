@@ -3,29 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: rgb(233, 241, 245) !important;
 }
-.search-field {
-  border: none;
-  border-radius: 50px;
-  padding: 5px;
-  outline: none;
-}
-.search-field:hover {
-  outline: none;
-  border: none;
-}
-.search-box {
-  border: 1px solid rgb(3, 118, 211);
-  width: 281px;
-  border-radius: 5px;
-  margin: auto;
-  margin-top: 50px;
-  border-right: none;
-}
-.search-button {
-  padding: 10px 50px;
-  border-radius: 25px;
-  margin-left: 20px;
-}
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,20 +14,24 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .single-product {
   padding: 10px;
   transition: 0.6s;
 }
+
 .single-product:hover {
   box-shadow: 4px 4px 10px gray;
   border-radius: 10px;
   border: 1px solid lightblue;
   background-color: #f7eeee;
 }
+
 .product-image {
   width: 125px;
   height: 125px;
 }
+
 .cart {
   width: 350px;
   /* border: 1px solid green; */
@@ -59,9 +41,11 @@ body {
   margin-right: 30px;
   position: fixed;
 }
+
 .cart-main {
   padding-right: 30px;
 }
+
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
@@ -80,6 +64,7 @@ body {
     padding-right: 10px;
   }
 }
+
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;
@@ -88,7 +73,6 @@ body {
 }
 
 /* Galaxy store own styles added */
-
 #total-Products{
   margin-left: 14px;
 }
@@ -96,6 +80,8 @@ body {
 .product{
   background-color: white;
   margin: 10px 5px 15px 15px;
+  padding-bottom: 10px;
+  border-radius: 8px;
 }
 
 .title-height{
@@ -103,10 +89,14 @@ body {
 }
 
 .fa-star{
-  color: goldenrod;
+  color: lightgrey;
 }
 
 .btn-bg-color{
   background-color: rgb(111, 171, 245) !important;
   font-weight: 700 !important;
+}
+
+.get-original-rating{
+  color: goldenrod;
 }

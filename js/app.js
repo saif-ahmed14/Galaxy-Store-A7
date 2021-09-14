@@ -13,6 +13,7 @@ const showProducts = (products) => {
 
   for (const product of allProducts) {
     const image = product.image;
+    const rate = Math.round(product.rating.rate);
     const div = document.createElement('div');
     div.classList.add('col', 'product');
     div.innerHTML = `
@@ -23,13 +24,7 @@ const showProducts = (products) => {
       <h5 class="title-height my-4">${product.title}</h5>
       <p>Category: ${product.category}</p>
       <h2 class="mb-2">Price: $ ${product.price}</h2>
-      <p>Rating - ${product.rating.rate}
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      (${product.rating.count})</p>
+      <p>Rating - ${product.rating.rate} ${ratingInfo(rate)} (${product.rating.count})</p>
       
       <button onclick="addToCart(${product.id}, ${product.price})" id="addToCart-btn" class="buy-now btn text-white btn-bg-color">Add to cart</button>
 
@@ -51,19 +46,14 @@ const showProducts = (products) => {
                 <h4 class="title-height my-4">${product.title}</h4>
                 <p>Category: ${product.category}</p>
                 <h2 class="mb-2">Price: $ ${product.price}</h2>
-                <p>Rating - ${product.rating.rate}
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                (${product.rating.count})</p>
+                <p>Rating - ${product.rating.rate} ${ratingInfo(rate)} (${product.rating.count})</p>
               </div>
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="addToCart(${product.id}, ${product.price})">Add to Cart</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
               </div>
+
             </div>
           </div>
         </div>
@@ -71,6 +61,20 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+//Rating 
+const ratingInfo = (rate) => {
+  let output = '';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rate) {
+      output += `<span class="fa fa-star get-original-rating"></span>`;
+    }
+    else {
+      output += `<span class="fa fa-star"></span>`;
+    }
+  };
+  return output;
+}
 
 //Add to cart function
 let count = 0;
@@ -102,7 +106,7 @@ const setInnerText = (id, value) => {
   document.getElementById(id).innerText = value.toFixed(2);
 };
 
-//Update delivery charge and total Tax
+//Update delivery charge and total tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
@@ -119,7 +123,7 @@ const updateTaxAndCharge = () => {
   }
 };
 
-//GrandTotal update function
+//GrandTotal update
 const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
