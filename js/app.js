@@ -34,7 +34,9 @@ const showProducts = (products) => {
       <button onclick="addToCart(${product.id}, ${product.price})" id="addToCart-btn" class="buy-now btn text-white btn-bg-color">Add to cart</button>
 
       <button id="details-btn" class="btn btn-secondary text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-      <!-- Modal -->
+
+      <!-- This is modal section & it is optional for this assignment. I'll try to add this for getting better experience. But when i clicked details button every button shows the same result. I'll try again in the future to fix it. Thank you! -->
+
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -46,16 +48,16 @@ const showProducts = (products) => {
               <img class="product-image" src=${image}></img>
       
               <div>
-              <h4 class="title-height my-4">${product.title}</h4>
-              <p>Category: ${product.category}</p>
-              <h2 class="mb-2">Price: $ ${product.price}</h2>
-              <p>Rating - ${product.rating.rate}
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              (${product.rating.count})</p>
+                <h4 class="title-height my-4">${product.title}</h4>
+                <p>Category: ${product.category}</p>
+                <h2 class="mb-2">Price: $ ${product.price}</h2>
+                <p>Rating - ${product.rating.rate}
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                (${product.rating.count})</p>
               </div>
 
               <div class="modal-footer">
